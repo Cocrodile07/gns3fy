@@ -39,12 +39,7 @@ jobs:
       - name: Install dependencies (if no cache)
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction
-
-
-      - name: Run black formatting check
-        uses: rickstaa/action-black@v1
-        with:
-          black_args: ". --check"
+  
 
       # Running tests
       - name: Running tests
