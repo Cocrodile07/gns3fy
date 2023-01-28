@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies (if no cache)
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction
-  
+
 
       # Running tests
       - name: Running tests
@@ -48,9 +48,9 @@ jobs:
         run: poetry run pytest --cov-report=xml --cov=gns3fy tests
  
       # Codecov coverage
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          fail_ci_if_error: true
+      #- name: Upload coverage to Codecov
+      #  uses: codecov/codecov-action@v2
+      #  with:
+      #    fail_ci_if_error: true
       #- name: Upload to codecov
       #  run: poetry run pytest --cov-report=xml --cov=gns3fy tests/
